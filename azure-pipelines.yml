@@ -8,5 +8,5 @@ steps:
 - task: katalonTask@0
   displayName: 'Execute Katalon Studio project'
   inputs:
-    version: '7.5.5'
+    version: '7.8.0'
     executeArgs: '-browserType="Chrome" -retry=0 -statusDelay=15 -testSuitePath="Test Suites/New Test Suite" -apiKey=$(katalon_api_key)'
