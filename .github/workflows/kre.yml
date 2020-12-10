@@ -4,10 +4,9 @@ on:
     branches: [ master ]
   pull_request:
     branches: [ master ]
-
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: macos-latest
     steps:
     - name: Checkout
       uses: actions/checkout@v2
@@ -15,7 +14,5 @@ jobs:
       uses: katalon-studio/katalon-studio-github-action@v2.1
       with:
           version: '7.8.1'
-          projectPath: '$'
-          env:
-            API_KEY= ${{ secrets.SECRET_KEY }}
-          args: '-noSplash -retry=0 -testSuitePath="Test Suites/New Test Suite" -browserType="Chrome" -apiKey=$API_KEY --config -webui.autoUpdateDrivers=true -g_apiKey=$API_KEY'
+          projectPath: '${{ github.workspace }}'
+          args: '-noSplash -retry=0 -browserType=Chrome -statusDelay=15 -testSuitePath="Test Suites/TS_RegressionTest" -apiKey=${{ secrets.SECRET_KEY }} --config -webui.autoUpdateDrivers=true'
