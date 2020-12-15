@@ -10,3 +10,21 @@ steps:
   inputs:
     version: '7.8.1'
     executeArgs: '-retry=0 -statusDelay=15 -testSuitePath="Test Suites/New Test Suite" -browserType="Chrome" -apiKey=$(katalon_api_key)'
+    
+- task: katalonTask@1
+  displayName: 'Execute Katalon Studio project'
+  inputs:
+    version: '7.8.1'
+    executeArgs: '-retry=0 -statusDelay=15 -testSuitePath="Test Suites/New Test Suite" -browserType="Chrome" -apiKey=$(katalon_api_key)'
+
+- task: katalonTask@2
+  displayName: 'Execute Katalon Studio project'
+  inputs:
+    version: '7.8.1'
+    executeArgs: '-retry=0 -statusDelay=15 -testSuitePath="Test Suites/New Test Suite" -browserType="Chrome" -apiKey=$(katalon_api_key)'
+
+- task: katalonTask@3
+  displayName: 'Execute Katalon Studio project'
+  inputs:
+    version: '7.8.1'
+    executeArgs: '-retry=0 -statusDelay=15 -testSuitePath="Test Suites/New Test Suite" -browserType="Chrome" -apiKey=$(katalon_api_key)'    
