@@ -20,6 +20,9 @@ WebUI.openBrowser('')
 
 WebUI.navigateToUrl('http://www.pdf995.com/samples/')
 
+println 'width: ' +  WebUI.getViewportWidth()
+println 'height: ' + WebUI.getViewportHeight()
+
 WebUI.click(findTestObject('Object Repository/pdf object'))
 
 WebUI.delay(20)
