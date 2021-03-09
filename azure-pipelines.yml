@@ -9,5 +9,5 @@ steps:
   displayName: 'Execute Katalon Studio project - 1st'
   inputs:
     version: '7.9.1'
-    executeArgs: '-retry=0 -statusDelay=15 -testSuitePath="Test Suites/New Test Suite" -browserType="Chrome" -apiKey=$(katalon_api_key)'
+    executeArgs: '-retry=0 -statusDelay=15 -testSuitePath="Test Suites/New Test Suite" -browserType="Chrome (headless)" -apiKey=$(katalon_api_key)'
     
