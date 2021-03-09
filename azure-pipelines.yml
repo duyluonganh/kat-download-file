@@ -5,6 +5,11 @@ pool:
   vmImage: 'vs2017-win2016'
 
 steps:
+- task: ScreenResolutionUtility@1
+  inputs:
+    displaySettings: 'specific'
+    width: '1600'
+    height: '900'
 - task: katalonTask@0
   displayName: 'Execute Katalon Studio project - 1st'
   inputs:
