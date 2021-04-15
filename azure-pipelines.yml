@@ -5,14 +5,18 @@ pool:
   vmImage: 'vs2017-win2016'
 
 steps:
-- task: ScreenResolutionUtility@1
+- task: S3Download@1
   inputs:
-    displaySettings: 'specific'
-    width: '1920'
-    height: '1080'
-- task: katalonTask@0
-  displayName: 'Execute Katalon Studio project - 1st'
-  inputs:
-    version: '8.0.0.rc3'
-    executeArgs: '-retry=0 -statusDelay=15 -testSuitePath="Test Suites/New Test Suite" -browserType="Chrome" -apiKey=$(katalon_api_key)'
-    
+    awsCredentials: 'aws'
+    regionName: 'us-east-1'
+    bucketName: 'katalon'
+    sourceFolder: '$(VERSION)'
+    globExpressions: '@(Katalon_Studio_Engine_Windows_64)*.zip'
+    targetFolder: '$(TMP_DIR)'
+    displayName: Download KSE and KRE
+
+- bash: |
+    set -xe
+    cd ${TMP_DIR}/${VERSION}
+    unzip Katalon_Studio_Windows_64-${VERSION}.zip
+  displayName: Extract KSR and KRE
