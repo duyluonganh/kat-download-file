@@ -15,6 +15,7 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
+import com.kms.katalon.core.testng.keyword.TestNGBuiltinKeywords as TestNGKW
 
 WebUI.openBrowser('')
 
@@ -22,11 +23,15 @@ WebUI.navigateToUrl('http://www.pdf995.com/samples/')
 
 WebUI.setViewPortSize(1600, 900)
 
-println 'width: ' +  WebUI.getViewportWidth()
-println 'height: ' + WebUI.getViewportHeight()
+println('width: ' + WebUI.getViewportWidth())
+
+println('height: ' + WebUI.getViewportHeight())
 
 WebUI.click(findTestObject('Object Repository/pdf object'))
 
 WebUI.delay(20)
 
 WebUI.closeBrowser()
+
+WebUI.comment('hello')
+
