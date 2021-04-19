@@ -15,6 +15,8 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 
+WebUI.comment('Welcome to Katalon Studio')
+
 WebUI.openBrowser('https://file-examples.com/index.php/sample-documents-download/sample-xls-download/')
 
 WebUI.click(findTestObject('Object Repository/xlsx object'))
