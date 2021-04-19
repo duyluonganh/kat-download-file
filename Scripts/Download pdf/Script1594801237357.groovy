@@ -33,5 +33,5 @@ WebUI.delay(20)
 
 WebUI.closeBrowser()
 
-WebUI.comment('hello')
+WebUI.comment('Welcome to Katalon Studio')
 
