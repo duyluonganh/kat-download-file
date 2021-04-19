@@ -14,4 +14,4 @@ steps:
   displayName: 'Execute Katalon Studio project'
   inputs:
     version: '7.9.1'
-    executeArgs: '-retry=0 -statusDelay=20 -testSuitePath="Test Suites/New Test Suite" -browserType="Firefox" -apiKey=$(katalon_api_key)'
+    executeArgs: '-retry=0 -statusDelay=20 -testSuitePath="Test Suites/New Test Suite" -browserType="Chrome" -apiKey=$(katalon_api_key)'
