@@ -10,5 +10,5 @@ steps:
   inputs:
     version: '7.9.1'
     executeArgs: '-retry=0 -statusDelay=20 -testSuitePath="Test Suites/New Test Suite" -browserType="Chrome" -apiKey=$(katalon_api_key)'
-    x11Display: :99
+    x11Display: '99'
     xvfbConfiguration: '-a -n 0 -s "-screen 0 1024x768x24"'
