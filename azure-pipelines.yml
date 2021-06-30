@@ -2,7 +2,7 @@ trigger:
 - master
 
 pool:
-  vmImage: 'vs2017-win2016'
+  vmImage: 'ubuntu-20.04'
 
 steps:
 - task: ScreenResolutionUtility@1
