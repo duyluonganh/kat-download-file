@@ -8,6 +8,6 @@ steps:
 - task: katalonTask@1
   displayName: 'Execute Katalon Studio project'
   inputs:
-    version: '8.0.5'
+    version: '7.9.1'
     executeArgs: '-retry=0 -statusDelay=20 -testSuitePath="Test Suites/New Test Suite" -browserType="Chrome" -apiKey=$(katalon_api_key)'
     xvfbConfiguration: '-a -n 0 -s "-screen 0 1024x768x24"'
