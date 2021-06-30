@@ -2,12 +2,12 @@ trigger:
 - master
 
 pool:
-  vmImage: 'ubuntu-16.04'
+  vmImage: 'ubuntu-18.04'
 
 steps:
 - task: katalonTask@1
   displayName: 'Execute Katalon Studio project'
   inputs:
-    version: '7.9.1'
-    executeArgs: '-consoleLog -retry=0 -statusDelay=20 -testSuitePath="Test Suites/New Test Suite" -browserType="Chrome" -apiKey=$(katalon_api_key)'
+    version: '8.0.5'
+    executeArgs: '-testSuitePath="Test Suites/New Test Suite" -browserType="Chrome" -apiKey=$(katalon_api_key)'
     xvfbConfiguration: '-a -n 0 -s "-screen 0 1024x768x24"'
