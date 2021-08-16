@@ -7,11 +7,10 @@
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//*[@id=&quot;table-files&quot;]/tbody/tr[1]/td[5]/a[1]</value>
+         <value>//a[contains(@href, 'https://file-examples-com.github.io/uploads/2017/02/file_example_XLS_10.xls')]</value>
       </entry>
       <entry>
          <key>BASIC</key>
-         <value></value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

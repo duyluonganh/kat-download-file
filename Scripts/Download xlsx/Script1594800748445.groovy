@@ -17,7 +17,9 @@ import internal.GlobalVariable as GlobalVariable
 
 WebUI.openBrowser('https://file-examples.com/index.php/sample-documents-download/sample-xls-download/')
 
-WebUI.click(findTestObject('Object Repository/xlsx object'))
+WebUI.scrollToElement(findTestObject('Object Repository/xlsx object'), 5)
+
+WebUI.enhancedClick(findTestObject('Object Repository/xlsx object'))
 
 WebUI.delay(20)
 
