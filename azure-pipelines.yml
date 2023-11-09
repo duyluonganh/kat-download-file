@@ -5,6 +5,9 @@ pool:
   vmImage: 'ubuntu-20.04'
 
 steps:
+- task: CmdLine@2
+  inputs:
+    script: 'apt install at-spi2-core'
 - task: katalonTask@1
   inputs:
     version: '8.6.8'
