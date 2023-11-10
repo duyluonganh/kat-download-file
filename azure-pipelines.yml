@@ -2,7 +2,7 @@ trigger:
 - master
 
 pool:
-  vmImage: 'ubuntu-22.04'
+  vmImage: 'ubuntu-20.04'
 
 steps:
 - task: CmdLine@2
@@ -11,6 +11,12 @@ steps:
       sudo apt-get update
       sudo apt-get install at-spi2-core
       sudo apt -y install xvfb
+      sudo apt -y install apt-utils
+      sudo apt -y install wget
+      sudo apt -y install unzip
+      sudo apt -y install curl
+      sudo apt -y install gosu
+      sudo apt -y install psmisc
 - task: katalonTask@1
   inputs:
     version: '8.6.8'
