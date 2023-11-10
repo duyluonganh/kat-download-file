@@ -7,12 +7,12 @@ pool:
 steps:
 - task: katalonTask@1
   inputs:
-    version: '8.6.8'
+    version: '9.0.0'
     executeArgs: '-testSuitePath="Test Suites/New Test Suite" -browserType="Chrome" -apiKey=$(katalon_api_key) --config -webui.autoUpdateDrivers=true'
     xvfbConfiguration: '-s "-screen 0 1024x768x24"'
   env:
-    JAVA_HOME: $(JAVA_HOME_8_X64)
-    PATH: $(JAVA_HOME_8_X64)/bin:$(PATH)
+    JAVA_HOME: $(JAVA_HOME_17_X64)
+    PATH: $(JAVA_HOME_17_X64)/bin:$(PATH)
 
 - task: PublishPipelineArtifact@0
   inputs:
