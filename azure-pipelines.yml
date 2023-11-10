@@ -17,7 +17,7 @@ steps:
   inputs:
     version: '8.6.8'
     executeArgs: '-testSuitePath="Test Suites/New Test Suite" -browserType="Chrome" -apiKey=$(katalon_api_key) --config -webui.autoUpdateDrivers=true'
-    xvfbConfiguration: '-a -n 0 -s "-screen 0 1024x768x24"'
+    xvfbConfiguration: '-s "-screen 0 1024x768x24"'
 - task: PublishPipelineArtifact@0
   inputs:
     artifactName: 'JUnit Report' 
