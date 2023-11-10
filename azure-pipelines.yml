@@ -14,14 +14,14 @@ steps:
       sudo apt-get install xvfb
       ps -ef | grep xvfb
       export DISPLAY=:99
+      export JAVA_HOME = $(JAVA_HOME_8_X64)
+      export PATH = $(JAVA_HOME_8_X64)/bin:$(PATH)
+
 - script: |
     java -version
   env:
     JAVA_HOME: $(JAVA_HOME_8_X64)
     PATH: $(JAVA_HOME_8_X64)/bin:$(PATH)
-
-- script: |
-    java -version
 
 - task: katalonTask@1
   inputs:
