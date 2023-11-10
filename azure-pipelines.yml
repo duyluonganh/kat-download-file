@@ -10,13 +10,22 @@ steps:
     script: |
       sudo apt-get update
       sudo apt-get install at-spi2-core
-      sudo apt -y install xvfb
-      sudo apt -y install apt-utils
-      sudo apt -y install wget
-      sudo apt -y install unzip
-      sudo apt -y install curl
-      sudo apt -y install gosu
-      sudo apt -y install psmisc
+      sudo apt-get install xvfb
+      sudo apt-get install apt-utils
+      sudo apt-get install wget
+      sudo apt-get install unzip
+      sudo apt-get install curl
+      sudo apt-get install gosu
+      sudo apt-get install psmisc
+      sudo apt-get install libfontconfig
+      sudo apt-get install libfreetype6
+      sudo apt-get install xfonts-cyrillic
+      sudo apt-get install xfonts-scalable
+      sudo apt-get install fonts-liberation
+      sudo apt-get install fonts-ipafont-gothic
+      sudo apt-get install fonts-wqy-zenhei
+      sudo apt-get install fonts-tlwg-loma-otf
+      sudo apt-get install ttf-ubuntu-font-family
 - task: katalonTask@1
   inputs:
     version: '8.6.8'
