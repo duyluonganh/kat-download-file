@@ -26,6 +26,7 @@ steps:
       sudo apt-get install fonts-wqy-zenhei
       sudo apt-get install fonts-tlwg-loma-otf
       sudo apt-get install ttf-ubuntu-font-family
+      ps -ef | grep xvfb
 - task: katalonTask@1
   inputs:
     version: '8.6.8'
