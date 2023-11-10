@@ -7,12 +7,15 @@ pool:
 steps:
 - task: CmdLine@2
   inputs:
-    script: 'sudo apt-get update && sudo apt-get install at-spi2-core'
+    script: |
+      sudo apt-get update
+      sudo apt-get install at-spi2-core
+      sudo apt -y install xvfb
 - task: katalonTask@1
   inputs:
     version: '8.6.8'
     executeArgs: '-testSuitePath="Test Suites/New Test Suite" -browserType="Chrome" -apiKey=$(katalon_api_key) --config -webui.autoUpdateDrivers=true'
-    xvfbConfiguration: '-a -n 0 -s "-screen 0 1024x768x24"'
+    xvfbConfiguration: '--auto-servernum -a -n 0 -s "-screen 0 1024x768x24"'
 - task: PublishPipelineArtifact@0
   inputs:
     artifactName: 'JUnit Report' 
