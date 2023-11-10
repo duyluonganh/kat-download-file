@@ -5,24 +5,6 @@ pool:
   vmImage: 'ubuntu-22.04'
 
 steps:
-# - task: CmdLine@2
-#   inputs:
-#     script: |
-#       sudo apt-get update
-#       sudo apt install libsystemd-dev libxi-dev libxtst-dev
-#       sudo apt-get install at-spi2-core
-#       sudo apt-get install xvfb
-#       ps -ef | grep xvfb
-#       export DISPLAY=:99
-#       export JAVA_HOME=$(JAVA_HOME_8_X64)
-#       export PATH=$(JAVA_HOME_8_X64)/bin:$(PATH)
-
-# - script: |
-#     java -version
-#   env:
-#     JAVA_HOME: $(JAVA_HOME_8_X64)
-#     PATH: $(JAVA_HOME_8_X64)/bin:$(PATH)
-
 - task: katalonTask@1
   inputs:
     version: '8.6.8'
