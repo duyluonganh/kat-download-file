@@ -6,7 +6,7 @@ on:
     branches: [ master ]
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
     steps:
     - name: Checkout
       uses: actions/checkout@v2
@@ -16,4 +16,3 @@ jobs:
           version: '7.8.1'
           projectPath: '${{ github.workspace }}'
           args: '-noSplash -retry=0 -browserType=Chrome -statusDelay=20 -testSuitePath="Test Suites/New Test Suite" -apiKey=${{ secrets.SECRET_KEY }} --config -webui.autoUpdateDrivers=true'
-          xvfbConfiguration: '-a -n 0 -s "-screen 0 1024x768x24"'
