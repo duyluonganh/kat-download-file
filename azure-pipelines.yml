@@ -16,6 +16,16 @@ steps:
       echo "Java Version Installed is"
       java -version
       echo "Install Complete"
+      export JAVA_HOME_8_X64="/usr/lib/jvm/java-8-openjdk-amd64"
+      echo $JAVA_HOME_8_X64
+
+- task: CmdLine@2
+  env:
+      JAVA_HOME: /usr/lib/jvm/java-1.8.0-openjdk-amd64
+      PATH: /usr/lib/jvm/java-1.8.0-openjdk-amd64/bin:$(PATH)
+  inputs:  
+    script: |
+      java -version
  
 - task: katalonTask@1
   inputs:
