@@ -5,14 +5,26 @@ pool:
   vmImage: 'ubuntu-22.04'
 
 steps:
+- task: CmdLine@2
+  inputs:
+    script: |
+      echo "Installing Java" 
+      sudo apt update
+      sudo apt install openjdk-8-jre -y
+      sudo update-java-alternatives -l
+      sudo update-alternatives --set java /usr/lib/jvm/java-8-openjdk-amd64/bin/java
+      echo "Java Version Installed is"
+      java -version
+      echo "Install Complete"
+ 
 - task: katalonTask@1
   inputs:
-    version: '9.0.0'
+    version: '8.6.8'
     executeArgs: '-testSuitePath="Test Suites/New Test Suite" -browserType="Chrome" -apiKey=$(katalon_api_key) --config -webui.autoUpdateDrivers=true'
     xvfbConfiguration: '-s "-screen 0 1024x768x24"'
   env:
-    JAVA_HOME: $(JAVA_HOME_17_X64)
-    PATH: $(JAVA_HOME_17_X64)/bin:$(PATH)
+    JAVA_HOME: $(JAVA_HOME_8_X64)
+    PATH: $(JAVA_HOME_8_X64)/bin:$(PATH)
 
 - task: PublishPipelineArtifact@0
   inputs:
