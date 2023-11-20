@@ -18,6 +18,7 @@ steps:
       echo "Install Complete"
       export JAVA_HOME_8_X64="/usr/lib/jvm/java-8-openjdk-amd64"
       echo $JAVA_HOME_8_X64
+      export HELLO="Hello"
 
 - task: CmdLine@2
   env:
@@ -26,6 +27,7 @@ steps:
   inputs:  
     script: |
       java -version
+      echo $HELLO
  
 - task: katalonTask@1
   inputs:
