@@ -19,6 +19,7 @@ steps:
       export JAVA_HOME_8_X64="/usr/lib/jvm/java-8-openjdk-amd64"
       echo $JAVA_HOME_8_X64
       export HELLO="Hello"
+      echo "Hello should print here: $HELLO"
 
 - task: CmdLine@2
   env:
@@ -27,7 +28,7 @@ steps:
   inputs:  
     script: |
       java -version
-      echo $HELLO
+      echo "Hello should not print here: $HELLO"
  
 - task: katalonTask@1
   inputs:
