@@ -33,7 +33,7 @@ steps:
  
 - task: katalonTask@1
   inputs:
-    version: '9.0.1'
+    version: '9.0.0'
     executeArgs: '-testSuitePath="Test Suites/New Test Suite" -browserType="Chrome" -apiKey=$(katalon_api_key) --config -webui.autoUpdateDrivers=true'
   #   xvfbConfiguration: '-s "-screen 0 1024x768x24"'
   # env:
