@@ -6,7 +6,7 @@ on:
     branches: [ master ]
 jobs:
   build:
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
     steps:
     # - name: Configure Xvfb on runner VM (required for KRE execution on Linux)
     #    #if: runner.os == 'Linux'
