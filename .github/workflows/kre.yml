@@ -6,7 +6,7 @@ on:
     branches: [ master ]
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     steps:
     # - name: Configure Xvfb on runner VM (required for KRE execution on Linux)
     #    #if: runner.os == 'Linux'
@@ -25,6 +25,12 @@ jobs:
     #       version: '7.8.1'
     #       projectPath: '${{ github.workspace }}'
     #       args: '-noSplash -retry=0 -browserType=Chrome -statusDelay=20 -testSuitePath="Test Suites/New Test Suite" -apiKey=${{ secrets.SECRET_KEY }} --config -webui.autoUpdateDrivers=true'
+    - name: Install docker # Taken from https://github.com/actions/virtual-environments/issues/1143#issuecomment-652264388
+      run: |
+        mkdir -p ~/.docker/machine/cache
+        curl -Lo ~/.docker/machine/cache/boot2docker.iso https://github.com/boot2docker/boot2docker/releases/download/v19.03.12/boot2docker.iso
+        brew install docker docker-machine
+        
     - name: Docker pull
       run: 'docker image pull katalonstudio/katalon:test'
 
