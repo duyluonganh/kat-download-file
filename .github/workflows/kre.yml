@@ -27,8 +27,8 @@ jobs:
     #       args: '-noSplash -retry=0 -browserType=Chrome -statusDelay=20 -testSuitePath="Test Suites/New Test Suite" -apiKey=${{ secrets.SECRET_KEY }} --config -webui.autoUpdateDrivers=true'
     - name: Install docker # Taken from https://github.com/actions/virtual-environments/issues/1143#issuecomment-652264388
       run: |
-        brew install --cask docker
-        sudo ln -s ~/.rd/docker.sock /var/run/docker.sock
+        brew install colima
+        colima start
         
     - name: Docker pull
       run: 'docker image pull katalonstudio/katalon:test'
