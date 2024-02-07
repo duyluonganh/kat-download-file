@@ -3,7 +3,7 @@ trigger:
 
 pool:
   # vmImage: 'ubuntu-22.04'
-  vmImage: windows-latest
+  vmImage: macos-latest
 
 steps:
 # - task: CmdLine@2
@@ -30,7 +30,11 @@ steps:
 #     script: |
 #       java -version
 #       echo "Hello should not print here: $HELLO"
- 
+- task: NodeTool@0
+  inputs:
+    versionSpec: '16.20.0'
+    displayName: 'Install Node.js'
+
 - task: katalonTask@1
   inputs:
     version: '9.0.0'
