@@ -8,34 +8,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    # - name: Configure Xvfb on runner VM (required for KRE execution on Linux)
-    #    #if: runner.os == 'Linux'
-    #   run: |
-    #     sudo apt-get install -y xvfb libxkbcommon-x11-0 libxcb-icccm4 libxcb-image0 libxcb-keysyms1 libxcb-randr0 libxcb-render-util0 libxcb-xinerama0 libxcb-xinput0 libxcb-xfixes0
-    #     sudo /usr/bin/Xvfb :0 -screen 0 1280x1024x24 &      
-    #     #run: xvfb-run -a -n 0 -s "-screen 0 1024x768x24" &
-    # - run: |
-    #     sudo apt-get update
-    #     sudo apt-get install openjdk-8-jre
-    # - name: Checkout
-    #   uses: actions/checkout@v2
-    # - name: Katalon Studio Github Action
-    #   uses: katalon-studio/katalon-studio-github-action@v2.1
-    #   with:
-    #       version: '7.8.1'
-    #       projectPath: '${{ github.workspace }}'
-    #       args: '-noSplash -retry=0 -browserType=Chrome -statusDelay=20 -testSuitePath="Test Suites/New Test Suite" -apiKey=${{ secrets.SECRET_KEY }} --config -webui.autoUpdateDrivers=true'
     - name: Checkout
       uses: actions/checkout@v2
-    - name: Install docker # Taken from https://github.com/actions/virtual-environments/issues/1143#issuecomment-652264388
-      run: |
-        brew install docker
-        colima start
-        
-    - name: Docker pull
-      run: |
-        docker image pull katalonstudio/katalon:test
-        ls -al
 
     - name: Katalon Run 1
       run:  'docker run -t --rm -e KATALON_USER_ID=665056758 -v "$(pwd)":/tmp/project katalonstudio/katalon:9.6.0 katalonc.sh -projectPath=/tmp/project -noSplash -testSuitePath="Test Suites/New Test Suite" -apiKey=${{ secrets.SECRET_KEY }} -browserType="Edge Chromium" --config -webui.autoUpdateDrivers=true'
