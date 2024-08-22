@@ -38,4 +38,4 @@ jobs:
         ls -al
 
     - name: Katalon Run 1
-      run:  'docker run -t --rm -e KATALON_USER_ID=665056758 -v "$(pwd)":/tmp/project katalonstudio/katalon:test katalonc.sh -projectPath=/tmp/project -noSplash -testSuitePath="Test Suites/New Test Suite" -apiKey=${{ secrets.SECRET_KEY }} -browserType="Edge Chromium" --config -webui.autoUpdateDrivers=true'
+      run:  'docker run -t --rm -e KATALON_USER_ID=665056758 -v "$(pwd)":/tmp/project katalonstudio/katalon:9.6.0 katalonc.sh -projectPath=/tmp/project -noSplash -testSuitePath="Test Suites/New Test Suite" -apiKey=${{ secrets.SECRET_KEY }} -browserType="Edge Chromium" --config -webui.autoUpdateDrivers=true'
