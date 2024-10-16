@@ -15,4 +15,4 @@ jobs:
       with:
           version: '9.6.0'
           projectPath: '${{ github.workspace }}'
-          args: '-noSplash -retry=0 -testSuitePath="Test Suites/New Test Suite" -apiKey= ${{ secrets.SECRET_KEY }} -browserType=Chrome'
+          args: '-noSplash -retry=0 -testSuitePath="Test Suites/New Test Suite" -apiKey=${{ secrets.SECRET_KEY }} -browserType=Chrome'
