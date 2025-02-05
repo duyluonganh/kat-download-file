@@ -16,3 +16,9 @@ jobs:
           version: '9.6.0'
           projectPath: '${{ github.workspace }}'
           args: '-noSplash -retry=0 -testSuitePath="Test Suites/New Test Suite" -apiKey=${{ secrets.SECRET_KEY }} -browserType=Chrome'
+    - name: Build Katalon Reports as Artifact
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+          name: Katalon-Reports
+          path: Reports/
