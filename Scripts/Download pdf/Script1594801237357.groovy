@@ -21,7 +21,7 @@ WebUI.openBrowser('')
 
 WebUI.navigateToUrl('http://www.pdf995.com/samples/')
 
-WebUI.setViewPortSize(1600, 900)
+WebUI.maximizeWindow()
 
 println('width: ' + WebUI.getViewportWidth())
 
