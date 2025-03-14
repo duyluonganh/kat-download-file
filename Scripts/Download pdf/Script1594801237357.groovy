@@ -19,7 +19,7 @@ import com.kms.katalon.core.testng.keyword.TestNGBuiltinKeywords as TestNGKW
 
 WebUI.openBrowser('')
 
-WebUI.navigateToUrl('http://www.pdf995.com/samples/')
+WebUI.navigateToUrl('https://bonigarcia.dev/selenium-webdriver-java/')
 
 WebUI.maximizeWindow()
 
@@ -27,7 +27,7 @@ println('width: ' + WebUI.getViewportWidth())
 
 println('height: ' + WebUI.getViewportHeight())
 
-WebUI.click(findTestObject('Object Repository/pdf object'))
+// WebUI.click(findTestObject('Object Repository/pdf object'))
 
 WebUI.delay(20)
 
