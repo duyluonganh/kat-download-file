@@ -8,6 +8,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+    - name: Checkout
+      uses: actions/checkout@v4.2.1
 
     - name: Katalon Run 1
-      run:  'docker run -t --rm -v "${{ github.workspace }}":/tmp/project katalonstudio/katalon:10.1.0 katalonc.sh -projectPath=/tmp/project -noSplash -testSuitePath="Test Suites/New Test Suite" -apiKey=${{ secrets.SECRET_KEY }} -browserType="Chrome" --config -webui.autoUpdateDrivers=true'
+      run:  'docker run -t --rm -v "$(pwd)":/tmp/project katalonstudio/katalon:10.1.0 katalonc.sh -projectPath=/tmp/project -noSplash -testSuitePath="Test Suites/New Test Suite" -apiKey=${{ secrets.SECRET_KEY }} -browserType="Chrome" --config -webui.autoUpdateDrivers=true'
