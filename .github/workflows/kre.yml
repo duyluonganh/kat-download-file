@@ -10,4 +10,4 @@ jobs:
     steps:
 
     - name: Katalon Run 1
-      run:  'ls $(pwd) & docker run -t --rm -v "$(pwd)":/tmp/project katalonstudio/katalon:10.1.0 katalonc.sh -projectPath=/tmp/project -noSplash -testSuitePath="Test Suites/New Test Suite" -apiKey=${{ secrets.SECRET_KEY }} -browserType="Chrome" --config -webui.autoUpdateDrivers=true'
+      run:  'ls $(pwd)'
